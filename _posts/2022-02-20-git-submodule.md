@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Spring Boot에서 git submodule로 민감 정보(yml) 관리"
-tags: [Spring Boot, Development, git, submodule]
+tags: [Spring Boot, GIST 청원, Git]
 date: 2022-02-20 09:30:00 +0900
-categories: [git, Development, 청원게시판]
+categories: [Development, Git]
 
 ---
 
