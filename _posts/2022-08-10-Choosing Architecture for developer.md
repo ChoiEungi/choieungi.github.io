@@ -6,7 +6,7 @@ title: "[Thinking] MSA에 대한 단상"
 
 tags: [Development, Thinking]
 
-date: 2022-08-10 18:39:00 +0900
+date: 2022-08-09 18:39:00 +0900
 
 categories: [생각]
 
