@@ -78,7 +78,7 @@ public class AnswerTest {
 
 [MySQL Docs](https://dev.mysql.com/doc/refman/5.7/en/insert-optimization.html)에서 many rows에 insert할 때 다음과 같이 조언을 했다.
 
-> If you are inserting many rows from the same client at the same time, use `[INSERT](https://dev.mysql.com/doc/refman/5.7/en/insert.html)` statements with multiple `VALUES` lists to insert several rows at a time. This is considerably faster (many times faster in some cases) than using separate single-row `[INSERT](https://dev.mysql.com/doc/refman/5.7/en/insert.html)` statements.
+> If you are inserting many rows from the same client at the same time, use `[INSERT]` statements with multiple `VALUES` lists to insert several rows at a time. This is considerably faster (many times faster in some cases) than using separate single-row `[INSERT]` statements.
 
  **다중으로 값을 넣을 예정이라면, 한번에 쿼리로 넣으라는 말이다.** 관련해서 구체적인 테스팅은 다음 글을 참고해도 좋을 듯하다.
 
@@ -113,7 +113,7 @@ public class BulkRepositoryImpl implements BulkRepository {
 
 - Spring Data JPA의 `saveAll()` - 20.892초
 
-<img src="https://raw.githubusercontent.com/ChoiEungi/git-blog-image/upload/2022-08-09-02%3A35%3A52.png"
+<img src="https://raw.githubusercontent.com/ChoiEungi/git-blog-image/upload/2022-08-09-02%3A35%3A52.png">
 
 - JdbcTemplate를 통한 native query - 1.371초
 
