@@ -57,9 +57,11 @@ categories: [Spring Boot Development]
 
  실제로 문제를 파악하기 위해서 디버깅을 진행해보면. 먼저 save가 실행 지점에 breakpoint를 잡고 이후 내부 동작을 확인하기 위해 Spring-data-jpa의 jar에 들어가서 `SimpleJpaReposiotry` 에서 breakpoint를 잡으면 다음과 같습니다.
 
-<img src="https://raw.githubusercontent.com/ChoiEungi/git-blog-image/upload/2022-08-24-17%3A25%3A34.png">
+<img src="https://raw.githubusercontent.com/ChoiEungi/git-blog-image/upload/2022-08-24-17%3A35%3A20.png">
 
-<img src="JPA%20save%20%E1%84%82%E1%85%A2%E1%84%87%E1%85%AE%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%85%E1%85%B5%209247a2ed64d94bb890a8122e84ea433b/Untitled%204.png">
+<img src="https://raw.githubusercontent.com/ChoiEungi/git-blog-image/upload/2022-08-24-17%3A36%3A20.png">
+
+
 
 디버깅을 실행하면 다음과 같습니다.
 
