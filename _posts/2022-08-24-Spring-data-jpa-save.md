@@ -81,4 +81,18 @@ categories: [Spring Boot Development]
 
 뿐만 아니라 해결책으로 `saveAndFlush` 를 사용하면 되지 않나? 싶어서 진행했는데도 통과하지 않았습니다. 이는 flush는 Persistent Context를 지우는 것이 아니라, Persistent Context의 내용을 DB에 쿼리를 날려 반영하는 것인 것도 놓쳤던 것 같습니다. 결국에는 identity가 다른 객체를 각각 만들어 save를 진행해 해결할 수 있었습니다. 
 
+```java
+@Test
+void retrieveInboxAllLettersTest() {
+
+    for (int i = 0; i < 3; i++) {
+        Letter letter = new Letter("content", user);
+        letter.send(user1);
+        letterRepository.save(letter);
+    }
+    List<InboxLetterResponse> inboxLetterResponses = letterService.retrieveInboxAllLetters(user1.getId());
+    assertThat(inboxLetterResponses.size()).isEqualTo(3);
+}
+```
+
 굉장히 기본적인 내용인데 생각보다 놓치기 쉬운 부분이기에 글을 작성합니다. JPA에서는 객체의 Identity(객체의 id값)를 통해 새로운 객체임을 구분하고 save메소드에서는 이를 기준으로 insert가 작동하기 때문에 이를 유의해야 할 것 같습니다.
