@@ -2,7 +2,7 @@
 
 layout: post
 
-title: "[Thinking] UC Berkeley에서 마치며 느낀 부족함 그리고 강점의 중요성"
+title: "[Thinking] UC Berkeley를 마치며 느낀 부족함 그리고 강점의 중요성"
 
 tags: [Thinking]
 
