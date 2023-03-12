@@ -22,7 +22,7 @@ categories: [Development]
 
 실제로 핀포인트 로그는 다음과 같이 나타났다.
 
-<img src="https://raw.githubusercontent.com/ChoiEungi/git-blog-image/upload/2023-03-12-23%3A29%3A19.png>
+<img src="https://raw.githubusercontent.com/ChoiEungi/git-blog-image/upload/2023-03-12-23%3A29%3A19.png">
 
 대략적으로 보면 알듯, 모두 30초(혹은 그 이상)에서 오류가 발생한 이력이 있는데 이는 어딘가에서 Timeout이 발생했음을 알 수 있다. 더 구체적으로 들어가서 확인해보면 에러가 다음과 같이 발생했다.
 
