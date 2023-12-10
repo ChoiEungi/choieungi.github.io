@@ -2,7 +2,7 @@
 
 layout: post
 
-title: “Spring Boot에서 Redis @Cacheable을 사용할 때 주의할 점”
+title: Spring Boot에서 Redis @Cacheable을 사용할 때 주의할 점
 
 tags: [Spring Boot, Redis]
 
@@ -118,11 +118,9 @@ public class ProductController {
 
 해당 코드에서 getTenProduct()를 먼저 호출하면 다음과 같은 응답이 오며 redis에 잘 쌓이게 됩니다. 
 
-<img src="https://i.imgur.com/yGBPAuN.png" width=400px, height=400px>
+![](https://i.imgur.com/yGBPAuN.png)
 
-
-
-<img src="https://i.imgur.com/s6JUDmM.png"  width=400px, height=400px>
+![](https://i.imgur.com/s6JUDmM.png)
 
 
 
@@ -133,7 +131,7 @@ public class ProductController {
 
 이후 ProductResponse를 v2 패키지로 변경한 이후 어플리케이션을 재실행해서 동일한 API를 호출하면 SerializationException이 발생합니다.
 
-``` // package com.example.redisinactions.api.v2;
+``` java
 // package com.example.redisinactions.api.v2;
 @Getter  
 @AllArgsConstructor(access = AccessLevel.PRIVATE)  
@@ -146,11 +144,11 @@ public class ProductResponse implements Serializable {
 ![](https://i.imgur.com/KlKjpgm.png)
 
 Exception의 cause를 확인해보면 `ClassNotFountException`이 발생합니다. `com.example.redisinactions.api.ProductResponse` 클래스를 역직렬화해야 하는데 해당 클래스가  `com.example.redisinactions.api.v2.ProductResponse`로 변경되어 발생한 현상입니다.
-```
+
+``` java
 Caused by: java.lang.ClassNotFoundException: com.example.redisinactions.api.ProductResponse
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
 	...
-
 ```
 
 ![](https://i.imgur.com/whlF2nJ.png)
