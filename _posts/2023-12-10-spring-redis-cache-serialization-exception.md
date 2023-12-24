@@ -177,8 +177,8 @@ public class CacheConfig {
 
 본래 문제는 이로 인한 트랜잭션의 실패였습니다. 더 생각해볼 점은 `@Cacheable`은 [Cahce aside pattern](https://yearnlune.github.io/general/cache-aside-pattern/#)을 사용하는데 해당 전략은 캐시 조회가 실패한다면 원본 데이터에서 가져오는 전략입니다. 따라서 해당 작업이 트랜잭션에서 캐시 조회에서 오류가 발생한다고 롤백 마크로 인해 전체 트랜잭션이 실패하면 안된다고 생각합니다. 이는 트랜잭션을 사용할 때 두고두고 고민해야 하는 부분이라고 생각합니다.
 
-관련 소스 코드는 다음 링크에서 확인할 수 있습니다.
-https://github.com/ChoiEungi/redis-in-actions/tree/feature/redis-cacheable
+관련 소스 코드는 다음 [링크](https://github.com/ChoiEungi/redis-in-actions/tree/feature/redis-cacheable)에서 확인할 수 있습니다.
+
 
 
 
