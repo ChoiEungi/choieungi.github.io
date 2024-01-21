@@ -296,7 +296,7 @@ public abstract class ContextRefresher {
 폴링의 경우 Config Server에 대한 트래픽이 더 커지게 되고 조직의 규모가 커지고 해당 Config Server를 사용하는 API 서버들이 많아질수록 더 부하가 많이갈 수 있습니다. 이는 예상치 못한 일이 발생할 수 있기에 해당 방법을 차용하게되면 Config Server를 더 세심하게 모니터링해야 합니다. 현재 조직 상황에 맞는 방법을 적절히 사용하는게 가장 중요하다고 생각합니다.
 실제로 [Toss Slash 23 영상(20:35~)](https://www.youtube.com/watch?v=Zs3jVelp0L8&t=1235s)에 따르면 운영 환경에서는 사용하지 않고 휴면 에러가 발생할 수 있다는 의견도 있기에 상황에 맞게 적절히 사용해야 합니다.
 
-해당 소스 코드는 다음 [링크](https://github.com/ChoiEungi/spring-cloud-config-refresh)에서 확인해 수 있습니다.
+해당 소스 코드는 다음 [링크](https://github.com/ChoiEungi/spring-cloud-config-refresh)에서 확인해볼 수 있습니다.
 
 
 참고 링크
