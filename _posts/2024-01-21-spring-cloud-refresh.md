@@ -242,15 +242,12 @@ ContextRefresher를 조금 더 들어가보겠습니다. 먼저 `refreshEnvironm
 이를 통해 bean overriding option에 따라 ConextRefresher의 구현체가 달라지는 것은 refresh할 때 빈을 정의하는 방식이 달라지기 때문임을 알 수 있습니다. 이는 `updateEnvironment()`를 구현체를 통해 구현한다는 것으로 이해할 수 있습니다.
 
 
-```Java
+```java
 // package org.springframework.cloud.context.refresh.ContextRefresher;
 public abstract class ContextRefresher {
   
-  ...
 	private ConfigurableApplicationContext context;
 	private RefreshScope scope;
-
-  ...
 
 	@SuppressWarnings("unchecked")
 	protected ContextRefresher(ConfigurableApplicationContext context, RefreshScope scope,
@@ -259,8 +256,6 @@ public abstract class ContextRefresher {
 		this.scope = scope;
 		additionalPropertySourcesToRetain = properties.getAdditionalPropertySourcesToRetain();
 	}
-
-  ...
 
 	public synchronized Set<String> refresh() {
 		Set<String> keys = refreshEnvironment();
