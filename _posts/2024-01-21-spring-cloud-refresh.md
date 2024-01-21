@@ -1,9 +1,8 @@
-
 ---
 
 layout: post
 
-title: “분산 시스템 환경에서 Spring Cloud Bus 없이 Spring Cloud Config 프로퍼티 Refresh하는 방법”
+title: 분산 시스템 환경에서 Spring Cloud Bus 없이 Spring Cloud Config 프로퍼티 Refresh하는 방법
 
 tags: [Spring Boot, Spring Cloud Config]
 
@@ -12,6 +11,7 @@ date: 2024-01-21 16:12:00 +0900
 categories: [Development]
 
 ---
+
 
 
 근래에 [요즘 우아한 개발](https://m.yes24.com/Goods/Detail/122535338)이라는 책을 읽다가 내용 중에 Spring Cloud Config에서 프로퍼티를 받아 올 때 배포 없이 받아오려 고민한 내용이 있었습니다. 외부 메시지 플랫폼을 이중화하면서 트래픽 분배를 어플리케이션이 실행 중에도 손쉽게 진행하려는 의도라고 언급했습니다. 또 선택한 방법이 일반적으로 사용하는 Spring Cloud Bus를 이용하기보다 Spring Boot만을 활용해 프로퍼티를 재배포 없이 수정하는 방법을 호기심에 구현해보게 되었습니다.
