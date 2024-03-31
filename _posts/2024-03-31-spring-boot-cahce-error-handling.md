@@ -193,23 +193,6 @@ public class CustomCacheErrorHandler extends SimpleCacheErrorHandler {
 }
 ```
 
-```java
-@Slf4j
-public class CustomCacheErrorHandler extends SimpleCacheErrorHandler {
-
-    @Override
-    public void handleCacheGetError(RuntimeException exception, Cache cache, Object key) {
-        if (exception instanceof SerializationException) {
-            log.warn("Failed to deserialize cache value for key: {}", key, exception);
-            return;
-        }
-
-        super.handleCacheGetError(exception, cache, key);
-    }
-
-}
-```
-
 캐시 설정은 다음과 같습니다. 전체 캐시(Spring Boot Cache)에 대한 책임을 `CacheConfig`에 두었고 레디스 캐시 설정에 대한 책임을 `RedisCacheConfig`에 뒀습니다,
 
 ```java
