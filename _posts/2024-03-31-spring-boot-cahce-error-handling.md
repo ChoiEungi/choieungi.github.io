@@ -2,7 +2,7 @@
 
 layout: post
 
-title: Spring Boot Caching에서 에러 핸들링하는 방법
+title: Spring Boot 캐싱에서 에러 핸들링하는 방법
 
 tags: [Spring Boot, Redis, Caching]
 
@@ -142,14 +142,16 @@ public abstract class CacheAspectSupport extends AbstractCacheInvoker
 }
 ```
 
-`CacheAspectSupport` 는 `AspectJCachingConfiguration`에서 빈으로 등록합니다. `AspectJCachingConfiguration`는 앞서 설정 값(`CachingConfigurer`)들을 setter injection으로 의존성 주입을 받은 `AbstractCachingConfiguration`를 상속받으며, 이 주입받은 값들을 이용해 빈으로 등록하게 됩니다. 해당 코드는 다음과 같으며 등록하는 빈인 `AnnotationCacheAspect`는 `CacheAspectSupport`를 상속받습니다.
+
+
+`CacheAspectSupport` 는 `ProxyCachingConfiguration`에서 빈으로 등록합니다. `AspectJCachingConfiguration`는 앞서 설정 값(`CachingConfigurer`)들을 setter injection으로 의존성 주입을 받은 `AbstractCachingConfiguration`를 상속받으며, 이 주입받은 값들을 이용해 빈으로 등록하게 됩니다. 해당 코드는 다음과 같으며 등록하는 빈인 `AnnotationCacheAspect`는 `CacheAspectSupport`를 상속받습니다.
+
 
 ```java
-// package org.springframework.cache.aspectj;
-// 
-@Configuration(proxyBeanMethods = false)
-@Role(BeanDefinition.ROLE_INFRASTRUCTURE)
-public class AspectJCachingConfiguration extends AbstractCachingConfiguration {
+// package org.springframework.cache.annotation;
+@Configuration(proxyBeanMethods = false)  
+@Role(BeanDefinition.ROLE_INFRASTRUCTURE)  
+public class ProxyCachingConfiguration extends AbstractCachingConfiguration {
 
 	@Bean(name = CacheManagementConfigUtils.CACHE_ASPECT_BEAN_NAME)
 	@Role(BeanDefinition.ROLE_INFRASTRUCTURE)
