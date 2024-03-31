@@ -2,7 +2,7 @@
 
 layout: post
 
-title: Spring Boot 캐싱에서 에러 핸들링하는 방법
+title: Spring Boot에서 CacheManager를 에러 핸들링하는 방법
 
 tags: [Spring Boot, Redis, Caching]
 
